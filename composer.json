@@ -30,7 +30,7 @@
 	"require-dev": {
 		"drahak/oauth2": "dev-master",
 		"nette/tester": "~1.3",
-		"janmarek/mockista": "dev-master",
+		"janmarek/mockista": "1.0.0",
 		"jakub-onderka/php-parallel-lint": "~0.8"
 	},
 	"autoload": {
