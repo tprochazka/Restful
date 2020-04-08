@@ -1,7 +1,7 @@
 <?php
 namespace Drahak\Restful\Application;
 
-use Nette\Application\IRouter;
+use Nette\Routing\Router;
 use Nette\Http\Url;
 use Nette\Http\UrlScript;
 use Nette\Http\Request;
@@ -18,7 +18,7 @@ class MethodOptions {
 
     use SmartObject;
 
-	/** @var IRouter */
+	/** @var Router */
 	private $router;
 
 	/** @var array */
@@ -33,9 +33,9 @@ class MethodOptions {
 	);
 
 	/**
-	 * @param IRouter $router
+	 * @param Router $router
 	 */
-	public function __construct(IRouter $router)
+	public function __construct(Router $router)
 	{
 		$this->router = $router;
 	}
@@ -52,11 +52,11 @@ class MethodOptions {
 
 	/**
 	 * Recursively checks available methods
-	 * @param IRouter $router
+	 * @param Router $router
 	 * @param UrlScript $url
 	 * @return string[]
 	 */
-	private function checkAvailableMethods(IRouter $router, UrlScript $url)
+	private function checkAvailableMethods(Router $router, UrlScript $url)
 	{
 		$methods = array();
 		foreach ($router as $route) {

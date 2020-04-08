@@ -4,7 +4,7 @@ namespace Drahak\Restful\Diagnostics;
 use Nette\SmartObject;
 use Traversable;
 use Drahak\Restful\Application\IResourceRouter;
-use Nette\Application\IRouter;
+use Nette\Routing\Router;
 use Latte\Runtime\Filters;
 use Tracy\IBarPanel;
 use Nette\Utils\Html;
@@ -26,7 +26,7 @@ class ResourceRouterPanel implements IBarPanel
 
     use SmartObject;
 
-	/** @var IRouter */
+	/** @var Router */
 	private $router;
 
 	/** @var string */
@@ -35,7 +35,7 @@ class ResourceRouterPanel implements IBarPanel
 	/** @var string */
 	private $requestTimeKey;
 
-	public function __construct($secretKey, $requestTimeKey, IRouter $router)
+	public function __construct($secretKey, $requestTimeKey, Router $router)
 	{
 		$this->secretKey = $secretKey;
 		$this->requestTimeKey = $requestTimeKey;
