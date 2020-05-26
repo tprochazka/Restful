@@ -65,11 +65,11 @@ class StrictRoute implements Router
 
 		$action = $this->getActionName($request->getMethod(), $pathArguments);
 		$params = $this->getPathParameters($pathArguments);
-		$params[Route::MODULE_KEY] = $this->module;
-		$params[Route::PRESENTER_KEY] = $pathParts[0];
+		$params['module'] = $this->module;
+		$params['presenter'] = $pathParts[0];
 		$params['action'] = $action;
 
-		$presenter = ($this->module ? $this->module . ':' : '') . $params[Route::PRESENTER_KEY];
+		$presenter = ($this->module ? $this->module . ':' : '') . $params['presenter'];
 
 		$appRequest = new Application\Request($presenter, $request->getMethod(), $params, $request->getPost(), $request->getFiles());
 		return $appRequest;
