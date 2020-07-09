@@ -239,7 +239,8 @@ abstract class ResourcePresenter extends UI\Presenter implements IResourcePresen
 	public function link(string $destination, $args = array(), $rel = Link::SELF) : string
 	{
 		$href = parent::link($destination, $args);
-		return (string) new Link($href, $rel);
+		$link = new Link($href, $rel);
+		return $link->getHref();
 	}
 
 
