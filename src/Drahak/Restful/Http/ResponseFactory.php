@@ -132,7 +132,7 @@ class ResponseFactory
 		$query['offset'] = $paginator->getOffset();
 		$query['limit'] = $paginator->getItemsPerPage();
 		$url->appendQuery($query);
-		return new Link($url, Link::NEXT);
+		return new Link($url->withQuery($query), Link::NEXT);
 	}
 
 	/**
@@ -147,7 +147,7 @@ class ResponseFactory
 		$query['offset'] = $paginator->getLastPage() * $paginator->getItemsPerPage() - $paginator->getItemsPerPage();
 		$query['limit'] = $paginator->getItemsPerPage();
 		$url->appendQuery($query);
-		return new Link($url, Link::LAST);
+		return new Link($url->withQuery($query), Link::LAST);
 	}
 
 }
