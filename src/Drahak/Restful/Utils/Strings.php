@@ -16,7 +16,7 @@ class Strings extends Nette\Utils\Strings
 	 * @param string $s
 	 * @return string
 	 */
-	public static function firstLower($s)
+	public static function firstLower(string $s) : string
 	{
 		return self::lower(self::substring($s, 0, 1)) . self::substring($s, 1);
 	}

@@ -346,7 +346,7 @@ class RestfulExtension extends CompilerExtension
 	{
 		$definitionas = $container->getDefinitions();
 		foreach ($definitionas as $definition) {
-			if ($definition->class === $type) {
+			if ($definition->getType() === $type) {
 				return $definition;
 			}
 		}

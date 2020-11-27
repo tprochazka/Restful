@@ -1,7 +1,7 @@
 <?php
 namespace Drahak\Restful\Application;
 
-use Nette\Application\IRouter;
+use Nette\Routing\Router;
 use Nette\Http;
 
 /**
@@ -9,7 +9,7 @@ use Nette\Http;
  * @package Drahak\Restful\Routes
  * @author Drahomír Hanák
  */
-interface IResourceRouter extends IRouter
+interface IResourceRouter extends Router
 {
 
 	/** Resource methods */
